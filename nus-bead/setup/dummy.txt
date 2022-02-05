@@ -1,0 +1,3 @@
+A nonexistent file which is treated by a computer program as if
+it were receiving its output data, when in fact the data are being ignored; used to suppress
+the creation of files that are needed only occasionally.
