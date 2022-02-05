@@ -40,3 +40,4 @@ schema = StructType([StructField('name', StringType(), True),
 df_meta = spark.createDataFrame(data, schema)
 df_meta.printSchema()
 df.join(df_meta, on='name', how='inner').show()
+
