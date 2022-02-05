@@ -1,5 +1,5 @@
-from pyspark.sql.types import StructType, StructField,StringType,IntegerType
 from pyspark.sql import SparkSession
+from pyspark.sql.types import StructType, StructField, StringType, IntegerType
 
 # Start the SparkSession
 spark = SparkSession.builder.appName('Statistics').getOrCreate()
@@ -24,8 +24,8 @@ df.select("score").describe().show()
 df.filter(df['score'] > 90).show()
 # Mutating values
 df.select(df['name'], df['semester'], df['subject'], df['score'],
-(df['score'] - 10).alias('adj_score')).show()
-df.withColumn('sqrt_socre', df['score']/2).show()
+          (df['score'] - 10).alias('adj_score')).show()
+df.withColumn('sqrt_socre', df['score'] / 2).show()
 # Sorting
 df.sort(df['score']).show()
 df.sort(df['score'].desc()).show()
@@ -35,8 +35,8 @@ data = [('ann', 'female', 23),
         ('charles', 'male', 22),
         ('david', 'male', 23)]
 schema = StructType([StructField('name', StringType(), True),
-                    StructField('sex', StringType(), True),
-                    StructField('age', IntegerType(), True)])
+                     StructField('sex', StringType(), True),
+                     StructField('age', IntegerType(), True)])
 df_meta = spark.createDataFrame(data, schema)
 df_meta.printSchema()
 df.join(df_meta, on='name', how='inner').show()

@@ -11,6 +11,8 @@ conf = conf.setMaster("local[*]")
 spark = SparkContext(conf=conf)
 spark.setLogLevel("ERROR")
 
+
+
 # Logs
 julyFirstLogs = spark.textFile("E://PycharmProjects//pythonProject//data//nasa_19950701.tsv")
 augustFirstLogs = spark.textFile("E://PycharmProjects//pythonProject//data//nasa_19950801.tsv")

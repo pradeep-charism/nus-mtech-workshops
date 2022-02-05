@@ -1,8 +1,9 @@
 from pyspark.sql import SparkSession
+
 # Start Spark Session
 spark = SparkSession.builder.appName("groupbyagg").getOrCreate()
 # Read sales data
-df = spark.read.csv('sales_info.csv',inferSchema=True,header=True)
+df = spark.read.csv('sales_info.csv', inferSchema=True, header=True)
 df.printSchema()
 df.show()
 # Group by company
