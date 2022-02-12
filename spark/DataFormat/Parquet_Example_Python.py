@@ -14,7 +14,7 @@ print(parquet_file.metadata.row_group(0))
 # read hdb resale price
 hdb_table = pv.read_csv("resale-flat-prices-based-on-registration-date-from-mar-2012-to-dec-2014.csv")
 # convert the CSV file to a Parquet file
-pq.write_table(hdb_table,'resale-flat-prices-based-on-registration-date-from-mar-2012-to-dec-2014.parquet')
+pq.write_table(hdb_table, 'resale-flat-prices-based-on-registration-date-from-mar-2012-to-dec-2014.parquet')
 hdb_parquet = pq.ParquetFile('resale-flat-prices-based-on-registration-date-from-mar-2012-to-dec-2014.parquet')
 # inspect the parquet metadata
 print(hdb_parquet.metadata)
